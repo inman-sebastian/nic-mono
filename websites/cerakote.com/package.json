@@ -1,0 +1,7 @@
+{
+    "name": "@nic/cerakote.com",
+    "type": "module",
+    "devDependencies": {
+        "@nic/core": "workspace:*"
+    }
+}

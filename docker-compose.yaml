@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    pocketbase:
+        container_name: pocketbase
+        image: pocketbase:latest
+        build:
+            context: .
+            dockerfile: services/pocketbase/Dockerfile
+        restart: unless-stopped
+        ports:
+            - 8080:8080
+
+networks:
+    pocketbase:
+        driver: default
