@@ -84,6 +84,8 @@ importers:
         specifier: 1.0.2
         version: 1.0.2
 
+  packages/components: {}
+
   packages/core: {}
 
   packages/schema: {}
@@ -92,8 +94,13 @@ importers:
 
   packages/types: {}
 
+  services/pocketbase: {}
+
   websites/cerakote.com:
     devDependencies:
+      '@nic/components':
+        specifier: workspace:*
+        version: link:../../packages/components
       '@nic/core':
         specifier: workspace:*
         version: link:../../packages/core
