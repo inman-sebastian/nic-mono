@@ -1,3 +1,6 @@
+[submodule "packages/components"]
+	path = packages/components
+	url = git@github.com-inman-sebastian:inman-sebastian/nic-components.git
 [submodule "packages/core"]
 	path = packages/core
 	url = git@github.com-inman-sebastian:inman-sebastian/nic-core.git
