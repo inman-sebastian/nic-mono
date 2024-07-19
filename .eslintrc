@@ -1,0 +1,23 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+    "plugins": ["@typescript-eslint"],
+    "settings": {
+        "jsdoc": {
+            "mode": "typescript"
+        }
+    },
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2020
+    },
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "@typescript-eslint/comma-spacing": "warn"
+    },
+    "ignorePatterns": [".vscode", "node_modules", "build"]
+}

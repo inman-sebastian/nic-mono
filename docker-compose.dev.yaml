@@ -1,0 +1,17 @@
+services:
+  cerakote.com:
+    container_name: cerakote.com
+    image: cerakote.com:latest
+    build:
+      context: .
+      target: development
+      dockerfile: Dockerfile
+    volumes:
+      - ./websites/cerakote.com:/nic/websites/cerakote.com
+    ports:
+      - '8000:5173'
+    command: ['pnpm', 'dev:cerakote.com']
+
+networks:
+  cerakote.com:
+    driver: default

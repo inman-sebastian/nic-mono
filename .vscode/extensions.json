@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "csstools.postcss",
+        "editorconfig.editorconfig",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.makefile-tools",
+        "roonie007.hide-files",
+        "pkief.material-icon-theme",
+        "ms-vscode-remote.remote-containers"
+    ]
+}

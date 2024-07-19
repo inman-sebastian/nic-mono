@@ -1,3 +1,6 @@
 [submodule "packages/core"]
 	path = packages/core
 	url = git@github.com-inman-sebastian:inman-sebastian/nic-core.git
+[submodule "websites/cerakote.com"]
+	path = websites/cerakote.com
+	url = git@github.com-inman-sebastian:inman-sebastian/cerakote.com.git

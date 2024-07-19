@@ -1,4 +1,24 @@
 {
+    "eslint.codeActionsOnSave.mode": "all",
+
+    "editor.linkedEditing": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll.eslint": "explicit"
+    },
+
+    /** CSS Settings */
+    "css.completion.completePropertyWithSemicolon": true,
+    "css.completion.triggerPropertyValueCompletion": true,
+
+    /** Search Settings */
+    "search.exclude": {
+        "**/node_modules": true
+    },
+
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -6,7 +26,6 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
-        "**/node_modules": true,
-        "**/pnpm-lock.yaml": true
+        "**/node_modules": true
     }
 }
