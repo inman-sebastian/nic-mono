@@ -1,0 +1,33 @@
+ARG NODE_VERSION=22.4.1
+ARG PNPM_VERSION=9.0.6
+
+# Create the base Node image.
+FROM node:${NODE_VERSION}-alpine AS node
+# Install specified pnpm version.
+RUN npm install -g pnpm@${PNPM_VERSION}
+
+FROM node AS base
+# Copy package files.
+COPY pnpm-workspace.yaml /nic/pnpm-workspace.yaml
+COPY package.json /nic/package.json
+COPY pnpm-lock.yaml /nic/pnpm-lock.yaml
+# Copy dev config files
+COPY .editorconfig /nic/.editorconfig
+COPY .npmrc /nic/.npmrc
+COPY .prettierrc /nic/.prettierrc
+COPY .stylelintrc /nic/.stylelintrc
+COPY eslint.config.js /nic/eslint.config.js
+COPY tsconfig.json /nic/tsconfig.json
+
+# Copy the packages directory for workspace references.
+COPY packages /nic/packages
+WORKDIR /nic
+# Install all root level dependencies and shared packages.
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --recursive --frozen-lockfile
+
+FROM base as website
+ARG WEBSITE
+COPY websites/${WEBSITE} /nic/websites/${WEBSITE}
+WORKDIR /nic/websites/${WEBSITE}
+# Install the dependencies for the specified website package.
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install

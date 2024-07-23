@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "typeRoots": ["./packages/types"]
+    },
+    "include": ["./packages/**/*", "./websites/**/*"]
+}

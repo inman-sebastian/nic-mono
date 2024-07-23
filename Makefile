@@ -1,11 +1,23 @@
-dev-build:
-	@echo "Build dev images"
-	docker-compose -f docker-compose.dev.yaml build
+build-services:
+	@echo "Build service images"
+	docker-compose -f docker-compose.services.yaml build
 
-dev-start:
-	@echo "Start dev containers"
-	docker-compose -f docker-compose.dev.yaml up -d
+build-websites:
+	@echo "Build website images"
+	docker-compose -f docker-compose.websites.yaml build
 
-dev-stop:
-	@echo "Stop dev containers"
-	docker-compose -f docker-compose.dev.yaml stop
+start-services:
+	@echo "Start service containers"
+	docker-compose -f docker-compose.services.yaml up -d
+
+start-websites:
+	@echo "Start website containers"
+	docker-compose -f docker-compose.websites.yaml up -d
+
+stop-services:
+	@echo "Stop service containers"
+	docker-compose -f docker-compose.services.yaml stop
+
+stop-websites:
+	@echo "Stop website containers"
+	docker-compose -f docker-compose.websites.yaml stop

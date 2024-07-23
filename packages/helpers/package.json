@@ -1,0 +1,5 @@
+{
+    "name": "@nic/helpers",
+    "type": "module",
+    "private": true
+}

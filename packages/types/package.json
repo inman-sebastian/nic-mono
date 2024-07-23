@@ -1,0 +1,8 @@
+{
+    "name": "@nic/types",
+    "type": "module",
+    "private": true,
+    "files": [
+        "*.d.ts"
+    ]
+}

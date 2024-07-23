@@ -1,0 +1,36 @@
+name: 'nic-websites'
+
+services:
+  # cerakote.com image
+  cerakote.com:
+    container_name: cerakote.com
+    image: cerakote.com:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.websites
+      target: website
+      args:
+        - WEBSITE=cerakote.com
+    volumes:
+      - ./packages:/nic/packages
+      - ./websites/cerakote.com:/nic/websites/cerakote.com
+    ports:
+      - '8000:5173'
+    command: ['pnpm', 'dev']
+
+  # prismaticpowders.com image
+  prismaticpowders.com:
+    container_name: prismaticpowders.com
+    image: prismaticpowders.com:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.websites
+      target: website
+      args:
+        - WEBSITE=prismaticpowders.com
+    volumes:
+      - ./packages:/nic/packages
+      - ./websites/prismaticpowders.com:/nic/websites/prismaticpowders.com
+    ports:
+      - '8001:5173'
+    command: ['pnpm', 'dev']
